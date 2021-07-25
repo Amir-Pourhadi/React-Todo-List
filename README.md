@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List.svg)](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
