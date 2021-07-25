@@ -1,14 +1,18 @@
 import { useState } from "react";
 
-export default function TodoForm() {
+export default function TodoForm({ onSubmit }) {
 	const [input, setInput] = useState("");
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		setInput(e.target.value);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = e => {
 		e.preventDefault();
+		onSubmit({
+			id: Math.floor(Math.random() * 10000),
+			content: input
+		});
 		setInput("");
 	};
 
