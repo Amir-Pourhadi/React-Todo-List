@@ -6,7 +6,8 @@ export default function TodoList() {
 	const [todos, setTodos] = useState([]);
 
 	const addTodo = (todo) => {
-		if (!todo.content || /^\s*$/.test(todo.content)) {
+		const { content } = todo;
+		if (!content || /^\s*$/.test(content)) {
 			return;
 		}
 		setTodos([todo, ...todos]);
@@ -25,7 +26,7 @@ export default function TodoList() {
 	return (
 		<div>
 			<h1>What's the Plan for Today?</h1>
-			<TodoForm onSubmit={addTodo} />
+			<TodoForm addTodo={addTodo} />
 			<Todo todos={todos} completeTodo={completeTodo} />
 		</div>
 	);
