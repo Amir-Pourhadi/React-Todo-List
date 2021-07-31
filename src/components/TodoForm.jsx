@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function TodoForm({ addTodo }) {
 	const [input, setInput] = useState("");
+	const inputRef = useRef(null);
+	useEffect(() => {
+		inputRef.current.focus();
+	}, []);
 
 	/**
 	 * To handle input change
@@ -28,8 +32,15 @@ export default function TodoForm({ addTodo }) {
 	return (
 		<div>
 			<form className="todo-form" onSubmit={handleSubmit}>
-				<input className="todo-input" type="text" placeholder="Add a new todo" value={input} onChange={handleChange} />
-				<input className="todo-button" type="submit" value="Add todo" />
+				<input
+					className="todo-input"
+					type="text"
+					placeholder="Add a new todo"
+					value={input}
+					onChange={handleChange}
+					ref={inputRef}
+				/>
+				<input className="todo-button" type="submit" value="add todo" />
 			</form>
 		</div>
 	);

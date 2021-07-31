@@ -10,15 +10,12 @@ export default function Todo({ todos, completeTodo, removeTodo, editTodo }) {
 		editTodo(edit.id, value);
 		setEdit({ id: null, value: "" });
 	};
-
 	if (edit.id) return <TodoForm edit={edit} addTodo={submitEdit} />;
 
 	return todos.map(({ id, content, isComplete }, index) => (
-		<div className={isComplete ? "todo-row complete" : "todo-row"} key={index}>
-			<div key={id} onClick={() => completeTodo(id)}>
-				{content}
-			</div>
-			<div className="icons">
+		<div className={isComplete ? "todo-row complete" : "todo-row"} key={index} onClick={() => completeTodo(id)}>
+			<div key={id}>{content}</div>
+			<div className="icons" onClick={(e) => e.stopPropagation()}>
 				<RiCloseCircleLine className="delete-icon" onClick={() => removeTodo(id)} />
 				<TiEdit className="edit-icon" onClick={() => setEdit({ id, value: content })} />
 			</div>
