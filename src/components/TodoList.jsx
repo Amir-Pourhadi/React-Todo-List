@@ -21,14 +21,14 @@ export default function TodoList() {
 	/**
 	 * To edit a todo matched with todo id
 	 * @param {number} todoId
-	 * @param {object} newValue
-	 * @returns nothing if newValue is empty string
+	 * @param {object} newTodo
+	 * @returns nothing if newTodo is empty string
 	 */
-	const editTodo = (todoId, newValue) => {
-		if (!newValue.content || /^\s*$/.test(newValue.content)) {
+	const editTodo = (todoId, newTodo) => {
+		if (!newTodo.content || /^\s*$/.test(newTodo.content)) {
 			return;
 		}
-		setTodos((prev) => prev.map((todo) => (todo.id === todoId ? newValue : todo)));
+		setTodos((prev) => prev.map((todo) => (todo.id === todoId ? newTodo : todo)));
 	};
 
 	/**
