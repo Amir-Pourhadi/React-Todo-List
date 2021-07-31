@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function TodoForm({ addTodo }) {
-	const [input, setInput] = useState("");
+export default function TodoForm({ addTodo, edit, inputPlaceholder, submitValue }) {
+	// To replace the input value with prev todo value when editing
+	const [input, setInput] = useState(edit ? edit.value : "");
+
+	// To focus on the input box when opened
 	const inputRef = useRef(null);
 	useEffect(() => {
 		inputRef.current.focus();
 	}, []);
+
+	// To have specific className when editing a todo
+	const isEdit = (edit || "") && "edit";
 
 	/**
 	 * To handle input change
@@ -16,7 +22,7 @@ export default function TodoForm({ addTodo }) {
 	};
 
 	/**
-	 * To handle submit button and empty input
+	 * To handle submit button and empty input when submitted
 	 * @param {event} e
 	 */
 	const handleSubmit = (e) => {
@@ -33,14 +39,14 @@ export default function TodoForm({ addTodo }) {
 		<div>
 			<form className="todo-form" onSubmit={handleSubmit}>
 				<input
-					className="todo-input"
+					className={`todo-input ${isEdit}`}
 					type="text"
-					placeholder="Add a new todo"
+					placeholder={inputPlaceholder}
 					value={input}
 					onChange={handleChange}
 					ref={inputRef}
 				/>
-				<input className="todo-button" type="submit" value="add todo" />
+				<input className={`todo-button ${isEdit}`} type="submit" value={submitValue} />
 			</form>
 		</div>
 	);
