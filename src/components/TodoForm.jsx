@@ -3,10 +3,18 @@ import { useState } from "react";
 export default function TodoForm({ addTodo }) {
 	const [input, setInput] = useState("");
 
+	/**
+	 * To handle input change
+	 * @param {event} e
+	 */
 	const handleChange = (e) => {
 		setInput(e.target.value);
 	};
 
+	/**
+	 * To handle submit button and empty input
+	 * @param {event} e
+	 */
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addTodo({
