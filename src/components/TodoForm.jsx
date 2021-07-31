@@ -20,17 +20,8 @@ export default function TodoForm({ addTodo }) {
 	return (
 		<div>
 			<form className="todo-form" onSubmit={handleSubmit}>
-				<input
-					className="todo-input"
-					type="text"
-					name="text"
-					placeholder="Add a new todo"
-					value={input}
-					onChange={handleChange}
-				/>
-				<button className="todo-button" type="submit">
-					Add todo
-				</button>
+				<input className="todo-input" type="text" placeholder="Add a new todo" value={input} onChange={handleChange} />
+				<input className="todo-button" type="submit" value="Add todo" />
 			</form>
 		</div>
 	);
