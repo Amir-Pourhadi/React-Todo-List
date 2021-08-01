@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodoForm({ addTodo, edit, inputPlaceholder, submitValue }) {
 	// To replace the input value with prev todo value when editing
@@ -28,7 +29,7 @@ export default function TodoForm({ addTodo, edit, inputPlaceholder, submitValue 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addTodo({
-			id: Math.floor(Math.random() * 10000),
+			id: uuidv4(),
 			content: input.trim(),
 			isComplete: false
 		});
