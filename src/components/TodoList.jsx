@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
@@ -16,6 +18,7 @@ export default function TodoList() {
 			return;
 		}
 		setTodos([todo, ...todos]);
+		toast.success("💌 Task Added Successfully!");
 	};
 
 	/**
@@ -29,6 +32,7 @@ export default function TodoList() {
 			return;
 		}
 		setTodos((prev) => prev.map((todo) => (todo.id === todoId ? newTodo : todo)));
+		toast.warning("💢 Task Edited Successfully!");
 	};
 
 	/**
@@ -37,6 +41,7 @@ export default function TodoList() {
 	 */
 	const removeTodo = (id) => {
 		setTodos(todos.filter((todo) => todo.id !== id));
+		toast.error("❌ Task Deleted Successfully!");
 	};
 
 	/**
@@ -47,6 +52,7 @@ export default function TodoList() {
 		const updatedTodos = todos.map((todo) => {
 			if (todo.id === id) {
 				todo.isComplete = !todo.isComplete;
+				todo.isComplete && toast.dark("✅ Task Completed Successfully!");
 			}
 			return todo;
 		});
@@ -54,10 +60,11 @@ export default function TodoList() {
 	};
 
 	return (
-		<div>
+		<>
 			<h1>What's the Plan for Today?</h1>
 			<TodoForm addTodo={addTodo} submitValue="add todo" inputPlaceholder="add a todo" />
 			<Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} editTodo={editTodo} />
-		</div>
+			<ToastContainer autoClose="2000" closeOnClick="false" />
+		</>
 	);
 }
