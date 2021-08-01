@@ -56,7 +56,7 @@ export default function TodoList() {
 	return (
 		<div>
 			<h1>What's the Plan for Today?</h1>
-			<TodoForm addTodo={addTodo} />
+			<TodoForm addTodo={addTodo} submitValue="add todo" inputPlaceholder="add a todo" />
 			<Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} editTodo={editTodo} />
 		</div>
 	);
