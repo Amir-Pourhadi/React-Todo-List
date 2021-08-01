@@ -14,7 +14,7 @@ export default function TodoList() {
 	 */
 	const addTodo = (todo) => {
 		const { content } = todo;
-		if (!content || /^\s*$/.test(content)) {
+		if (!content.trim()) {
 			return;
 		}
 		setTodos([todo, ...todos]);
@@ -28,7 +28,7 @@ export default function TodoList() {
 	 * @returns nothing if newTodo is empty string
 	 */
 	const editTodo = (todoId, newTodo) => {
-		if (!newTodo.content || /^\s*$/.test(newTodo.content)) {
+		if (!newTodo.content.trim()) {
 			return;
 		}
 		setTodos((prev) => prev.map((todo) => (todo.id === todoId ? newTodo : todo)));

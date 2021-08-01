@@ -29,7 +29,7 @@ export default function TodoForm({ addTodo, edit, inputPlaceholder, submitValue 
 		e.preventDefault();
 		addTodo({
 			id: Math.floor(Math.random() * 10000),
-			content: input,
+			content: input.trim(),
 			isComplete: false
 		});
 		setInput("");
