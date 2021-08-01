@@ -36,18 +36,16 @@ export default function TodoForm({ addTodo, edit, inputPlaceholder, submitValue 
 	};
 
 	return (
-		<div>
-			<form className="todo-form" onSubmit={handleSubmit}>
-				<input
-					className={`todo-input ${isEdit}`}
-					type="text"
-					placeholder={inputPlaceholder}
-					value={input}
-					onChange={handleChange}
-					ref={inputRef}
-				/>
-				<input className={`todo-button ${isEdit}`} type="submit" value={submitValue} />
-			</form>
-		</div>
+		<form className="todo-form" onSubmit={handleSubmit}>
+			<input
+				className={`todo-input ${isEdit}`}
+				type="text"
+				placeholder={inputPlaceholder}
+				value={input}
+				onChange={handleChange}
+				ref={inputRef}
+			/>
+			<input className={`todo-button ${isEdit}`} type="submit" value={submitValue} />
+		</form>
 	);
 }
