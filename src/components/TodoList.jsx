@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Todo from "./Todo";
@@ -6,6 +6,19 @@ import TodoForm from "./TodoForm";
 
 export default function TodoList() {
 	const [todos, setTodos] = useState([]);
+	/**
+	 * To save and load todos on local storage
+	 */
+	const LOCAL_STORAGE_KEY = "todoApp.todos";
+
+	useEffect(() => {
+		const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+		storedTodos && setTodos(storedTodos);
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+	}, [todos]);
 
 	/**
 	 * To add a todo if its not empty string
