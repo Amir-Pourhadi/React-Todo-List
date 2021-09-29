@@ -1,4 +1,5 @@
 [![wakatime](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List.svg)](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57db640c-848d-43f4-9e8e-c6aad8006c96/deploy-status)](https://app.netlify.com/sites/amir-react-todolist/deploys)
 
 # Getting Started with Create React App
 
