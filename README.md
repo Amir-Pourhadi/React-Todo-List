@@ -2,12 +2,7 @@
 
   [![wakatime](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List.svg)](https://wakatime.com/badge/github/Amir-Pourhadi/React-Todo-List)
   [![Netlify Status](https://api.netlify.com/api/v1/badges/57db640c-848d-43f4-9e8e-c6aad8006c96/deploy-status)](https://app.netlify.com/sites/amir-react-todolist/deploys)
-  [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_React-Todo-List&metric=ncloc)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_React-Todo-List)
-  [![CodeFactor](https://www.codefactor.io/repository/github/amir-pourhadi/react-todo-list/badge)](https://www.codefactor.io/repository/github/amir-pourhadi/react-todo-list)  
-  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_React-Todo-List&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_React-Todo-List)
-  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_React-Todo-List&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_React-Todo-List)
-  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_React-Todo-List&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_React-Todo-List)
-  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_React-Todo-List&metric=security_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_React-Todo-List)
+
 </div>
 
 # Getting Started with Create React App
